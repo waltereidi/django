@@ -3,12 +3,12 @@
 <html>
 
 <head>
-    <title>{% block title %}My book{% endblock %}</title>
-    <link href="{% static " css/main.css" %}" rel="stylesheet">
+    <title>main</title>
+    
 </head>
 
 <body>
-    {% extends "blog/views/layout/header.html" %}
+    <img src="{% static '/biblioteca/sdsd.png' %}" alt="My image">
     <div id="content">
         {% block description %}
         {% endblock %}

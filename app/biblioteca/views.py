@@ -13,10 +13,3 @@ def biblioteca_list(request):
     c = {"foo": "bar"}
     return HttpResponse(t.render(c, request), content_type="application/xhtml+xml")
 
-        
-
-class BibliotecaListView(ListView):
-    queryset = Book.published.all()
-    context_object_name = 'books'
-    paginate_by = 3
-    template_name = 'biblioteca/base.html'
