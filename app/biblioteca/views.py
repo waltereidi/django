@@ -9,7 +9,7 @@ from django.core.paginator import   Paginator, EmptyPage,\
 
 def biblioteca_list(request):
     # View code here...
-    t = loader.get_template("biblioteca/base.html")
+    t = loader.get_template("biblioteca/main.html")
     c = {"foo": "bar"}
-    return HttpResponse(t.render(c, request), content_type="application/xhtml+xml")
+    return HttpResponse(t.render(c, request))
 
