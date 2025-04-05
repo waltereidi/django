@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Book(models.Model):
     app_label = 'biblioteca'
     db_table = 'book'
@@ -10,4 +11,6 @@ class Book(models.Model):
     updated = models.DateTimeField(auto_now=True)
 def __str__(self):
     return self.title
+def teste():
+    return 'sdsd'
 

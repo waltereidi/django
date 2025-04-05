@@ -5,11 +5,15 @@ from django.template import loader
 # Create your views here.
 from django.core.paginator import   Paginator, EmptyPage,\
                                     PageNotAnInteger
-                                    
 
-def biblioteca_list(request):
+from biblioteca.service import mainPageService as service
+                                    
+def index(request):
     # View code here...
-    t = loader.get_template("biblioteca/main.html")
-    c = {"foo": "bar"}
+    t = loader.get_template("biblioteca/view/mainPage.html")
+    c = service.getIndex()
     return HttpResponse(t.render(c, request))
+
+
+
 
