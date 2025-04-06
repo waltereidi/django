@@ -1,7 +1,10 @@
 from biblioteca.models.book import Book
 
 def getIndex():
-    object_list = Book.objects.all()
+    books = getBooks()
 
-    return { 'foo' : list(object_list).pop().title}
+    return { 'bookDataSource' : list(books)}
+
+def getBooks():
+    return Book.objects.all()
 

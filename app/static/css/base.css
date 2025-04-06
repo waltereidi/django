@@ -1,3 +1,9 @@
-body {
-    background-color: brown;
+@font-face {
+    font-family: "Baskerville Old Face";
+    src:
+      local("Baskerville Old Face") ,local("baskerville-old-face"),
+      url("../fonts/baskerville-old-face.ttf") format("opentype");
+  }
+body{
+    font-family: 'baskerville-old-face';
 }

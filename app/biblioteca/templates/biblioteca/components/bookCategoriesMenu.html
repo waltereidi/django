@@ -1,0 +1,10 @@
+<div class="category--menu__container">
+
+    {% for category in menuCateogries %}
+        <div class="category--menu__item">
+            <p> {% category.name %} </p>
+            <p> {% category.count %} </p>
+        </div>
+    {% endfor %}
+
+</div>

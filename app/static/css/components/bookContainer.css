@@ -1,0 +1,20 @@
+.bookContainer{
+    display: flex; 
+    flex-flow: row;
+    width:100%; 
+    max-height: 250px;
+}
+.bookContainer--image{
+    flex: 1 1 auto;
+    max-height: 250px;
+}
+.bookContainer--mainInfo{
+    flex:1 1 40%; 
+}
+.bookContainer--description{
+    flex: 1 1  20;
+}
+.bookContainer--mainInfo__label{
+    font-weight: bold;
+    font-size:larger;
+}

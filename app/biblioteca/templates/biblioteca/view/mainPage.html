@@ -1,10 +1,30 @@
 {% extends "biblioteca/base.html" %}
+{% load static %}
 
-{% block title %}My Blog{% endblock %}
+{% block title %}My Books{% endblock %}
 
+<link href="{% static "css/view/mainPage.css" %}" rel="stylesheet">
 {% block content %}
   <h1>My view</h1>
-  {{foo}}
-  
+  {% include "biblioteca/layout/header.html" %}
+
+  <div id="container" class="container">
+    <div class="container--left cl">
+      {% include "biblioteca/components/bookCategoriesIndex.html"%}
+    </div>
+
+    <div class="container--center cc">
+      
+      {% for book in bookDataSource %}
+        {% include "biblioteca/components/bookContainer.html" %}
+      {% endfor %}
+
+    </div>
+
+    <div class="container--right cr">
+
+    </div>
+
+  </div>
 
 {% endblock %}
