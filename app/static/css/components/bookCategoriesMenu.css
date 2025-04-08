@@ -1,7 +1,6 @@
-.category--menu__container{
+.category--menu__container {
     display:flex; 
     flex-flow:row; 
-
 }
 .category--menu__item{
     display:flex; 

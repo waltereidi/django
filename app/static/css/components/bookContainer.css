@@ -3,16 +3,21 @@
     flex-flow: row;
     width:100%; 
     max-height: 250px;
+    
 }
 .bookContainer--image{
     flex: 1 1 auto;
     max-height: 250px;
+    object-fit: contain;
 }
+
 .bookContainer--mainInfo{
-    flex:1 1 40%; 
+    flex:1 1 25%; 
+    justify-items: start;
 }
 .bookContainer--description{
-    flex: 1 1  20;
+    flex: 1 1  35%;
+    justify-items: start;
 }
 .bookContainer--mainInfo__label{
     font-weight: bold;

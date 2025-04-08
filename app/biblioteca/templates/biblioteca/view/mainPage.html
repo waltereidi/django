@@ -5,8 +5,8 @@
 
 <link href="{% static "css/view/mainPage.css" %}" rel="stylesheet">
 {% block content %}
-  <h1>My view</h1>
   {% include "biblioteca/layout/header.html" %}
+  {% include "biblioteca/components/bookCategoriesMenu.html" %}
 
   <div id="container" class="container">
     <div class="container--left cl">
@@ -15,9 +15,8 @@
 
     <div class="container--center cc">
       
-      {% for book in bookDataSource %}
-        {% include "biblioteca/components/bookContainer.html" %}
-      {% endfor %}
+      {% block mainPageContent %}
+      {% endblock %}
 
     </div>
 

@@ -1,15 +1,4 @@
-.header--container{
-    display:flex;
-    flex:1 1 auto; 
-    flex-flow: column; 
-}
-.top{
+.header--container { 
+    object-fit: fill;
     width: 100%;
-}
-.top > image{
-    width:100%;
-}
-.bottom{
-    display:flex; 
-    flex-flow:row wrap; 
 }

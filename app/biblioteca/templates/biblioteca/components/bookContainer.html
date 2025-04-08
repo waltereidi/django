@@ -1,30 +1,36 @@
+{% extends "biblioteca/view/mainPage.html" %}
 {% load static %}
+
+{% block mainPageContent %}
 <link href="{% static "css/components/bookContainer.css" %}" rel="stylesheet">
 
-<div class="bookContainer border bg-light p-3">
-    <img class="bookContainer--image">
-    <div class="bookContainer--mainInfo">
-        <p>
-            <span class="bookContainer--mainInfo__label">
-                Title:
-            </span> 
-            {{ book.title}}
-        </p>
-        <p>
-            <span class="bookContainer--mainInfo__label">   
-                ISBN:
-            </span> 
-            {{book.isbn}}
-        </p>
-        
-    </div>
-    <div class="bookContainer--description"> 
-        <figure>
-            <blockquote class="blockquote"> {{book.description}} </blockquote>
+{% for book in bookDataSource %}
+    <div class="bookContainer card bg-light p-3 my-3">
+        <img class="bookContainer--image" src="https://i.ebayimg.com/images/g/M2EAAOSwmOhlFQhp/s-l500.webp">
+        <div class="bookContainer--mainInfo">
+            <p>
+                <span class="bookContainer--mainInfo__label">
+                    Title:
+                </span> 
+                {{ book.title}}
+            </p>
+            <p>
+                <span class="bookContainer--mainInfo__label">   
+                    ISBN:
+                </span> 
+                {{book.isbn}}
+            </p>
             
-            <figcaption class="blockquote-footer">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-            </figcaption>
-        </figure>
+        </div>
+        <div class="bookContainer--description"> 
+            <figure>
+                <blockquote class="blockquote"> {{book.description}} </blockquote>
+                
+                <figcaption class="blockquote-footer">
+                    Someone famous in <cite title="Source Title">Source Title</cite>
+                </figcaption>
+            </figure>
+        </div>
     </div>
-</div>
+{% endfor %}
+{% endblock %}
