@@ -30,22 +30,21 @@
         
     }
     .cc{
-        flex: 0 0 auto;
+        flex: 1 1 auto;
     }
     .cr{
         flex: 0 0 25%;
     }
 }
-.container{
+.mainPageContainer {
     display:flex; 
     flex-flow:row wrap; 
-    
 }
 .container--left{
-    display:flex;
-    flex-flow: column;
+    
 }
 .container--center{
     display:flex; 
     flex-flow:column; 
 }
+

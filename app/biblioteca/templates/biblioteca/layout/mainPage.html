@@ -1,26 +1,31 @@
 {% extends "biblioteca/base.html" %}
+
 {% load static %}
+
+
 
 {% block title %}My Books{% endblock %}
 
-<link href="{% static "css/view/mainPage.css" %}" rel="stylesheet">
 {% block content %}
+  <link href="{% static "css/layout/mainPage.css" %}" rel="stylesheet">
+
   {% include "biblioteca/layout/header.html" %}
   {% include "biblioteca/components/bookCategoriesMenu.html" %}
+  
 
-  <div id="container" class="container">
-    <div class="container--left cl">
-      {% include "biblioteca/components/bookCategoriesIndex.html"%}
+  <div class="mainPageContainer">
+    <div class="container--left cl p-3">
+      {% include "biblioteca/components/bookCategoriesLateral.html"%}
     </div>
 
-    <div class="container--center cc">
+    <div class="container--center cc p-3">
       
       {% block mainPageContent %}
       {% endblock %}
 
     </div>
 
-    <div class="container--right cr">
+    <div class="container--right cr p-3">
 
     </div>
 

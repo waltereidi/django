@@ -8,3 +8,6 @@ def getIndex():
 def getBooks():
     return Book.objects.all()
 
+def getCategoriesBook() -> str:
+    return ''
+

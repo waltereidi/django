@@ -23,3 +23,7 @@
     font-weight: bold;
     font-size:larger;
 }
+.bookContainer--pagination {
+    display: flex;
+    justify-content: end;
+}

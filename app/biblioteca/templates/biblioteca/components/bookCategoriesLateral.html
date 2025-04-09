@@ -1,0 +1,12 @@
+<table class="table table-dark table-borderless">
+    <tbody>
+        {% for category in CategoriesDataSource %}
+        
+        <tr>
+            <th scope="row">{{ category.name  }}</th>
+            <th><span class="badge rounded-pill bg-light text-dark">{{ category.count }}</span></th>
+        </tr>
+        
+        {% endfor %}
+    </tbody>
+  </table>

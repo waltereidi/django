@@ -1,8 +1,8 @@
-{% extends "biblioteca/view/mainPage.html" %}
+{% extends "biblioteca/layout/mainPage.html" %}
 {% load static %}
 
 {% block mainPageContent %}
-<link href="{% static "css/components/bookContainer.css" %}" rel="stylesheet">
+<link href="{% static "css/view/bookContainer.css" %}" rel="stylesheet">
 
 {% for book in bookDataSource %}
     <div class="bookContainer card bg-light p-3 my-3">
@@ -33,4 +33,9 @@
         </div>
     </div>
 {% endfor %}
+
+    <div class="bookContainer--pagination">
+        {% include "biblioteca/components/pagination.html" %}
+    </div>
+
 {% endblock %}
