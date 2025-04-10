@@ -7,19 +7,20 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
-
     {% comment %} NavBarEnd -- Item container Start {% endcomment %}
     <div class="category--menu__container primar p-3">
-
+   
         {% comment %} NavBarItems {% endcomment %}
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-            {% for category in menuCateogries %}
+            {% for category in categoryBookDataSource %}
+            
+            
                 <div class="category--menu__item">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <p>{{ category.name }}</p>
-                            <span class="badge rounded-pill bg-light text-dark"><p>{{ category.count }}</p></span>
+                            <p>{{ category }}</p>
+                            <span class="badge rounded-pill bg-light text-dark"><p>{{ category.category }}</p></span>
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>    

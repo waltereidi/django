@@ -1,13 +1,20 @@
 from biblioteca.models.book import Book
+from biblioteca.models.categoryBook import CategoryBook
+from django.db.models import Count
 
-def getIndex():
-    books = getBooks()
+class MainPageService():
+    
+    def getIndex():
+        return { 
+                'bookDataSource' : list(MainPageService.getBooks()),
+                'categoryBookDataSource' : list(MainPageService.getCategoriesBookCount())
+                }
 
-    return { 'bookDataSource' : list(books)}
+    def getBooks():
+        return Book.objects.all()
 
-def getBooks():
-    return Book.objects.all()
-
-def getCategoriesBook() -> str:
-    return ''
+    def getCategoriesBookCount() :
+        result =CategoryBook.objects.values('category').annotate(categories=Count("book"))
+        
+        return result
 

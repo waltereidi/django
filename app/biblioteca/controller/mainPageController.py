@@ -6,13 +6,16 @@ from django.template import loader
 from django.core.paginator import   Paginator, EmptyPage,\
                                     PageNotAnInteger
 
-from biblioteca.service import mainPageService as service
-                                    
-def index(request):
-    # View code here...
-    t = loader.get_template("biblioteca/view/bookContainer.html")
-    c = service.getIndex()
-    return HttpResponse(t.render(c, request))
+from biblioteca.service.mainPageService import MainPageService
+
+class MainPageController():
+    
+                                        
+    def index(request):
+        # View code here...
+        t = loader.get_template("biblioteca/view/bookContainer.html")
+        
+        return HttpResponse(t.render(MainPageService.getIndex(), request))
 
 
 
