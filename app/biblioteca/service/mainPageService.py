@@ -14,7 +14,7 @@ class MainPageService():
         return Book.objects.all()
 
     def getCategoriesBookCount() :
-        result =CategoryBook.objects.values('category').annotate(categories=Count("book"))
+        result =CategoryBook.objects.values('category__name').annotate(total=Count('id'))
         
-        return result
+        return list(result)
 

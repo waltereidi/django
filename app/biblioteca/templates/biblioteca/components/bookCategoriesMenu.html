@@ -9,23 +9,21 @@
     </button>
     {% comment %} NavBarEnd -- Item container Start {% endcomment %}
     <div class="category--menu__container primar p-3">
-   
         {% comment %} NavBarItems {% endcomment %}
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-
-            {% for category in categoryBookDataSource %}
-            
-            
-                <div class="category--menu__item">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <p>{{ category }}</p>
-                            <span class="badge rounded-pill bg-light text-dark"><p>{{ category.category }}</p></span>
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>    
-                </div>
-            {% endfor %}
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    {% for category in categoryBookDataSource %}
+                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">{{ category.category__name }}
+                                <span class="badge rounded-pill bg-light text-dark">{{ category.total }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                
+              </div>
         </ul>
         {% comment %} NavBarItems END{% endcomment %}
 
