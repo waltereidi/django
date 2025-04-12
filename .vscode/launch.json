@@ -1,18 +1,19 @@
 {
-  "version": "0.2.0",
   "configurations": [
-    {
-      "name": "Run Django",
-      "type": "debugpy",
-      "request": "attach",
-      "pathMappings": [
-        {
-          "localRoot": "${workspaceFolder}/app",
-          "remoteRoot": "${workspaceFolder}"
-        }
-      ],
-      "port": 5678,
-      "host": "127.0.0.1",
-    }
+      {
+          "name": "Docker: Python - Django",
+          "type": "debugpy",
+          "request": "attach",
+          "pathMappings": [
+              {
+                  "localRoot": "${workspaceFolder}/app",
+                  "remoteRoot": "/app"
+              }
+          ],
+          "connect": {
+            "port": 5678,
+            "host": "localhost",      
+          }
+      }
   ]
 }

@@ -11,11 +11,11 @@ from biblioteca.service.mainPageService import MainPageService
 class MainPageController():
     
                                         
-    def index(request):
+    def index(request,currentPage:int):
         # View code here...
         t = loader.get_template("biblioteca/view/bookContainer.html")
         
-        return HttpResponse(t.render(MainPageService.getIndex(), request))
+        return HttpResponse(t.render(MainPageService.getIndex(currentPage), request))
 
 
 
