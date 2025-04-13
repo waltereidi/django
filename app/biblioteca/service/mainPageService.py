@@ -3,28 +3,28 @@ from biblioteca.models.categoryBook import CategoryBook
 from django.db.models import Count
 
 
-class MainPageService():
+class MainPageService:
     
-    def getIndex(currentPage:int):
+    def getIndex(currentPage:int ):
         
         result = { 
-                'bookDataSource' : list(MainPageService.getBooks(currentPage)),
-                'categoryBookDataSource' : list(MainPageService.getCategoriesBookCount())
-                
+                    'bookDataSource' : list(MainPageService.getBooks(currentPage)),
+                    'categoryBookDataSource' : list(MainPageService.getCategoriesBookCount()),
+                    'totalCount' : MainPageService.getBookCount() ,
+                    'paginationSize' : MainPageService.getPaginationSize() ,
                 }
         return result
     
-    def getPaginationConfig() -> int :
+    def getPaginationSize() -> int :
         return 5
     
     def getBooks(currentPage:int):
-        return MainPageService.getBooksProjection().all()[currentPage:MainPageService.getPaginationConfig]
-    
-    def getBooksProjection():
-        return Book.objects.filter(book__active=1)
+        maxPages = MainPageService.getPaginationSize()
+        
+        return Book.objects.all()[currentPage:maxPages]
     
     def getBookCount():
-        return MainPageService.getBooksProjection().count()
+        return Book.objects.count()
     
 #all()[currentPage:MainPageService.getPaginationConfig]
     def getCategoriesBookCount():

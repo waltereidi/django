@@ -8,13 +8,13 @@ from django.core.paginator import   Paginator, EmptyPage,\
 
 from biblioteca.service.mainPageService import MainPageService
 
-class MainPageController():
+class MainPageController:
     
                                         
-    def index(request,currentPage:int):
+    def index(request):
         # View code here...
         t = loader.get_template("biblioteca/view/bookContainer.html")
-        
+        currentPage = int(request.GET.get('currentPage' , '0'))
         return HttpResponse(t.render(MainPageService.getIndex(currentPage), request))
 
 
