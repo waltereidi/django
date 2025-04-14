@@ -1,7 +1,7 @@
 from biblioteca.models.book import Book
 from biblioteca.models.categoryBook import CategoryBook
 from django.db.models import Count
-
+from biblioteca.componentsDAO.paginationDAO import PaginationDAO
 
 class MainPageService:
     
@@ -10,10 +10,19 @@ class MainPageService:
         result = { 
                     'bookDataSource' : list(MainPageService.getBooks(currentPage)),
                     'categoryBookDataSource' : list(MainPageService.getCategoriesBookCount()),
-                    'totalCount' : MainPageService.getBookCount() ,
-                    'paginationSize' : MainPageService.getPaginationSize() ,
+                    'paginationDataSource' : MainPageService.getPagination(currentPage)
                 }
         return result
+    
+    def getPagination(currentPage:int ) -> PaginationDAO : 
+        paginationSize = MainPageService.getPaginationSize()
+        totalCount = MainPageService.getBookCount()
+        dao =  PaginationDAO(
+            currentPage,  
+            totalCount,
+            paginationSize
+        )
+        return dao.getPaginationArray()
     
     def getPaginationSize() -> int :
         return 5

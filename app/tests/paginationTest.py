@@ -6,6 +6,5 @@ class PaginationTest(TestCase):
         pagination = PaginationDAO(1 , 10 , 5)
         
         result = pagination.getPaginationArray()
-        print(result)
-        self.assertTrue(result.count == 2)
+        self.assertTrue(len(result) == 2)
         

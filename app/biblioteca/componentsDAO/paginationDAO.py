@@ -6,23 +6,35 @@ class PaginationDAO:
         self.currentPage = currentPage
         self.totalCount = totalCount 
         self.paginationSize = paginationSize
+        
         pass
     
     def getPaginationArray(self ):
         
         if( self.paginationSize > self.totalCount):
-            return list({'page' : 1 , 'selected' : True })
+            pagination = list()
+            pagination.append({'page' : 1 , 'selected' : True })
+            return {
+            'pagination' : pagination, 
+            'totalCount' : self.totalCount ,
+            'paginationSize':self.paginationSize
+            }
 
-        pages = self.paginationSize/self.totalCount
         
-        result = list()
+        pages = self.totalCount/self.paginationSize
+
+        pagination = list()
         count = 0
         
         while(count < pages):
-            page =result.append({'page' : count+1 , 'selected' : count+1 == self.currentPage })
+            pagination.append({'page' : count+1 , 'selected' : count+1 == self.currentPage })
             count += 1
         
-        return result
+        return {
+            'pagination' :pagination , 
+            'totalCount' : self.totalCount ,
+            'paginationSize':self.paginationSize
+            }
         
             
         
