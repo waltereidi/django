@@ -33,7 +33,8 @@ class MainPageService:
         return Book.objects.all()[currentPage:maxPages]
     
     def getBookCount():
-        return Book.objects.count()
+        q = Book.objects
+        return q.count()
     
 #all()[currentPage:MainPageService.getPaginationConfig]
     def getCategoriesBookCount():

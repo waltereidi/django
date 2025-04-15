@@ -1,25 +1,25 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
       
-          <li class="page-item disabled">
+          <li class="page-item {{paginationDataSource.previousPageButtonStyle}}">
         <a class="page-link" 
-            href="#" 
+            href="{{paginationDataSource.previousPage}}" 
             tabindex="-1" 
-            {%if page.selected == True and page.page == 1 %}aria-disabled="disabled"{% endif %}>Previous</a>
+            {%if paginationDataSource.previousPage in "#" %}aria-disabled="disabled"{% endif %}>Previous</a>
       </li>
     {% for page in paginationDataSource.pagination %}
 
       {%if page.selected == True %}
         <li class="page-item active"><a class="page-link" href="#">{{ page.page }}</a></li>  
       {% else %}
-        <li class="page-item"><a class="page-link" href="#">{{ page.page }}</a></li>    
+        <li class="page-item"><a class="page-link" href="#">{{ page.pageLink }}</a></li>    
       {% endif %}
     {% endfor %}
     
     <li class="page-item">
-      <a class="page-link" 
-      {%if page.selected == True and page.page == paginationDataSource.totalCount %}aria-disabled="disabled" {%endif%}
-        href="#"  >Next
+      <a class="page-link {{paginationDataSource.nextPageButtonStyle}}" 
+        {%if paginationDataSource.nextPage ==  "#" %}aria-disabled="disabled" {%endif%}
+        href="{{paginationDataSource.nextPage}}"  >Next
       </a>
     </li>
   </ul>
