@@ -15,7 +15,9 @@ class MainPageController:
         # View code here...
         t = loader.get_template("biblioteca/view/bookContainer.html")
         currentPage = int(request.GET.get('currentPage' , '0'))
-        return HttpResponse(t.render(MainPageService.getIndex(currentPage), request))
+        categories = str(request.GET.get('categories','')).split(',')
+        
+        return HttpResponse(t.render(MainPageService.getIndex(currentPage,categories), request))
 
 
 
