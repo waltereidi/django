@@ -11,13 +11,13 @@ class MainPageService:
         result = { 
                     'bookDataSource' : list(MainPageService.getBooks(currentPage , categories)),
                     'categoryBookDataSource' : list(MainPageService.getCategoriesBookCount()),
-                    'paginationDataSource' : MainPageService.getPagination(currentPage)
+                    'paginationDataSource' : MainPageService.getPagination(currentPage, categories)
                 }
         return result
     
-    def getPagination(currentPage:int ) -> PaginationDAO : 
+    def getPagination(currentPage:int , categories:list ) -> PaginationDAO : 
         paginationSize = MainPageService.getPaginationSize()
-        totalCount = MainPageService.getBookCount()
+        totalCount = MainPageService.getBookCount(categories)
         dao =  PaginationDAO(
             currentPage,  
             totalCount,
@@ -42,8 +42,8 @@ class MainPageService:
             
         return result
     
-    def getBookCount():
-        projection = MainPageService.getBooksProjection()
+    def getBookCount(categories:list):
+        projection = MainPageService.getBooksProjection(categories)
         
         return projection.count()
     

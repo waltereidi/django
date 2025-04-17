@@ -6,11 +6,10 @@ class PaginationDAO:
         self.currentPage = currentPage
         self.totalCount = totalCount 
         self.paginationSize = paginationSize
-        
         pass
     
     def getPaginationArray(self ):
-        
+         
         if( self.paginationSize > self.totalCount):
             pagination = list()
             pagination.append({'page' : 1 , 'selected' : True , 'pageLink':'#' })

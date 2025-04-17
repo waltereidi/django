@@ -1,9 +1,11 @@
+{% load static %}
+<script type="text/javascript" src="{% static "js/components/bookCategoriesLateral.js" %}"></script>
 <table class="table table-dark table-borderless my-3">
     <tbody>
         {% for category in categoryBookDataSource %}
         
         <tr>
-            <th scope="row">{{ category.category__name  }}</th>
+            <th scope="row"><a attr-bookCategoriesLateral="{{ category.category__name  }}" >{{ category.category__name  }}</a></th>
             <th><span class="badge rounded-pill bg-light text-dark">{{  category.total }}</span></th>
         </tr>
         
