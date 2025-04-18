@@ -3,11 +3,11 @@
 {% load static %}
 
 
-
 {% block title %}My Books{% endblock %}
 
 {% block content %}
   <link href="{% static "css/layout/mainPage.css" %}" rel="stylesheet">
+  
 
   {% include "biblioteca/layout/header.html" %}
   {% include "biblioteca/components/bookCategoriesMenu.html" %}
@@ -15,7 +15,7 @@
 
   <div class="mainPageContainer">
     <div class="container--left cl p-3">
-      {% include "biblioteca/components/bookCategoriesLateral.html"%}
+      {% comment %} {% include "biblioteca/components/bookCategoriesLateral.html"%} {% endcomment %}
     </div>
 
     <div class="container--center cc p-3">
